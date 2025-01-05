@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\migrations\\20250105190235_populatetasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\migrations\\20250105190235_populatetasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,12 +19,8 @@
       "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\migrations\\20250105182239_populateusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\migrations\\20250105182239_populateusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,67 +34,64 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\User.cs",
               "RelativeDocumentMoniker": "ToDo\\Models\\User.cs",
               "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\User.cs",
               "RelativeToolTip": "ToDo\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:42:37.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T16:42:37.467Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Task.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Task.cs",
               "RelativeDocumentMoniker": "ToDo\\Models\\Task.cs",
               "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Task.cs",
               "RelativeToolTip": "ToDo\\Models\\Task.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:43:24.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T16:43:24.361Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Program.cs",
-              "RelativeDocumentMoniker": "ToDo\\Program.cs",
-              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Program.cs",
-              "RelativeToolTip": "ToDo\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "ToDo\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Controllers\\UserController.cs",
+              "RelativeToolTip": "ToDo\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAIwEoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:34:29.815Z",
+              "WhenOpened": "2025-01-05T22:54:40.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\appsettings.json",
-              "RelativeDocumentMoniker": "ToDo\\appsettings.json",
-              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\appsettings.json",
-              "RelativeToolTip": "ToDo\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-05T16:09:47.43Z",
-              "EditorCaption": ""
+              "DocumentIndex": 1,
+              "Title": "20250105190235_PopulateTasks.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Migrations\\20250105190235_PopulateTasks.cs",
+              "RelativeDocumentMoniker": "ToDo\\Migrations\\20250105190235_PopulateTasks.cs",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Migrations\\20250105190235_PopulateTasks.cs",
+              "RelativeToolTip": "ToDo\\Migrations\\20250105190235_PopulateTasks.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T19:02:37.772Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Context\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "ToDo\\Context\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Context\\AppDbContext.cs",
-              "RelativeToolTip": "ToDo\\Context\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAA1AAAAAAAAAA==",
+              "Title": "20250105182239_PopulateUsers.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Migrations\\20250105182239_PopulateUsers.cs",
+              "RelativeDocumentMoniker": "ToDo\\Migrations\\20250105182239_PopulateUsers.cs",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Migrations\\20250105182239_PopulateUsers.cs",
+              "RelativeToolTip": "ToDo\\Migrations\\20250105182239_PopulateUsers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:03:07.704Z"
+              "WhenOpened": "2025-01-05T18:22:40.646Z"
             }
           ]
         }
