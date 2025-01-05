@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\models\\tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -28,23 +40,61 @@
               "RelativeDocumentMoniker": "ToDo\\Models\\User.cs",
               "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\User.cs",
               "RelativeToolTip": "ToDo\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T15:28:05.993Z",
+              "WhenOpened": "2025-01-05T16:42:37.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "ToDo\\Models\\Task.cs",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Task.cs",
+              "RelativeToolTip": "ToDo\\Models\\Task.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T16:43:24.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Tasks.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Tasks.cs",
-              "RelativeDocumentMoniker": "ToDo\\Models\\Tasks.cs",
-              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Tasks.cs",
-              "RelativeToolTip": "ToDo\\Models\\Tasks.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Program.cs",
+              "RelativeDocumentMoniker": "ToDo\\Program.cs",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Program.cs",
+              "RelativeToolTip": "ToDo\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T15:27:29.27Z",
+              "WhenOpened": "2025-01-05T16:34:29.815Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\appsettings.json",
+              "RelativeDocumentMoniker": "ToDo\\appsettings.json",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\appsettings.json",
+              "RelativeToolTip": "ToDo\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-05T16:09:47.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ToDo\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "ToDo\\Context\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T16:03:07.704Z"
             }
           ]
         }
