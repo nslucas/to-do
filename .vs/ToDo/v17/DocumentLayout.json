@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -40,27 +40,27 @@
               "RelativeDocumentMoniker": "ToDo\\Models\\User.cs",
               "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\User.cs",
               "RelativeToolTip": "ToDo\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-05T16:42:37.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Task.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Task.cs",
               "RelativeDocumentMoniker": "ToDo\\Models\\Task.cs",
               "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Task.cs",
               "RelativeToolTip": "ToDo\\Models\\Task.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-05T16:43:24.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Program.cs",
               "RelativeDocumentMoniker": "ToDo\\Program.cs",
