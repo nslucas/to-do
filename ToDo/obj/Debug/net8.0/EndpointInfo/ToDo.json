@@ -373,10 +373,6 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "title": {
             "maxLength": 80,
             "minLength": 0,
@@ -402,9 +398,6 @@
           "userId": {
             "type": "integer",
             "format": "int32"
-          },
-          "user": {
-            "$ref": "#/components/schemas/User"
           }
         },
         "additionalProperties": false
@@ -417,10 +410,6 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
             "maxLength": 80,
             "minLength": 0,
@@ -435,13 +424,6 @@
             "maxLength": 300,
             "minLength": 0,
             "type": "string"
-          },
-          "tasks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Task"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
