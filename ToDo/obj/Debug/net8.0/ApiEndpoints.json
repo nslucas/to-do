@@ -1,8 +1,28 @@
 [
   {
-    "ContainingType": "ToDo.Controllers.TaskController",
+    "ContainingType": "ToDo.Controllers.TasksController",
+    "Method": "Get",
+    "RelativePath": "Tasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ToDo.Models.Task, ToDo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ToDo.Controllers.TasksController",
     "Method": "Post",
-    "RelativePath": "Task",
+    "RelativePath": "Tasks",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -16,9 +36,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ToDo.Controllers.TaskController",
+    "ContainingType": "ToDo.Controllers.TasksController",
     "Method": "Get",
-    "RelativePath": "Task/{id}",
+    "RelativePath": "Tasks/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -43,9 +63,9 @@
     "EndpointName": "GetNewTask"
   },
   {
-    "ContainingType": "ToDo.Controllers.TaskController",
+    "ContainingType": "ToDo.Controllers.TasksController",
     "Method": "Put",
-    "RelativePath": "Task/{id}",
+    "RelativePath": "Tasks/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -64,9 +84,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ToDo.Controllers.TaskController",
+    "ContainingType": "ToDo.Controllers.TasksController",
     "Method": "Delete",
-    "RelativePath": "Task/{id}",
+    "RelativePath": "Tasks/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -80,29 +100,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ToDo.Controllers.TaskController",
+    "ContainingType": "ToDo.Controllers.UsersController",
     "Method": "Get",
-    "RelativePath": "tasks",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ToDo.Models.Task, ToDo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ToDo.Controllers.UserController",
-    "Method": "Get",
-    "RelativePath": "User",
+    "RelativePath": "Users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -120,9 +120,9 @@
     ]
   },
   {
-    "ContainingType": "ToDo.Controllers.UserController",
+    "ContainingType": "ToDo.Controllers.UsersController",
     "Method": "Post",
-    "RelativePath": "User",
+    "RelativePath": "Users",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -136,9 +136,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ToDo.Controllers.UserController",
+    "ContainingType": "ToDo.Controllers.UsersController",
     "Method": "Get",
-    "RelativePath": "User/{id}",
+    "RelativePath": "Users/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -163,9 +163,9 @@
     "EndpointName": "GetNewUser"
   },
   {
-    "ContainingType": "ToDo.Controllers.UserController",
+    "ContainingType": "ToDo.Controllers.UsersController",
     "Method": "Put",
-    "RelativePath": "User/{id}",
+    "RelativePath": "Users/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -184,9 +184,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ToDo.Controllers.UserController",
+    "ContainingType": "ToDo.Controllers.UsersController",
     "Method": "Delete",
-    "RelativePath": "User/{id}",
+    "RelativePath": "Users/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

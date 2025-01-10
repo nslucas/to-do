@@ -2,35 +2,46 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using ToDo.Context;
 using TaskModel = ToDo.Models.Task;
+using Microsoft.EntityFrameworkCore;
 
 namespace ToDo.Controllers
 {
     [ApiController]
     [Microsoft.AspNetCore.Mvc.Route("[controller]")]
-    public class TaskController : ControllerBase
+    public class TasksController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public TaskController(AppDbContext context)
+        public TasksController(AppDbContext context)
         {
             _context = context;
         }
 
-        [HttpGet("/tasks")]
+        [HttpGet("/Tasks")]
         public ActionResult<IEnumerable<TaskModel>> Get()
         {
-            var tasks = _context.Tasks.ToList();
+            var tasks = _context.Tasks.Select(t => new
+            {
+                t.Id,
+                t.Title,
+                t.Description,
+                t.Status,
+                t.CreatedAt,
+                t.UpdatedAt,
+                t.UserId,
+                User = t.User.Name
+            }).ToList();
             if (tasks == null)
             {
                 return NotFound("Tasks not found.");
             }
-            return tasks;
+            return Ok(tasks);
         }
 
         [HttpGet("{id}", Name = "GetNewTask")]
         public ActionResult<TaskModel> Get(int id)
         {
-            var task = _context.Tasks.FirstOrDefault(u => u.Id == id);
+            var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
             if (task == null)
             {
                 return NotFound("Task not found.");
@@ -58,7 +69,7 @@ namespace ToDo.Controllers
             {
                 return BadRequest();
             }
-            _context.Tasks.Update(task);
+            _context.Entry(task).State = EntityState.Modified;
             _context.SaveChanges();
             return Ok("Task updated successfully.");
         }

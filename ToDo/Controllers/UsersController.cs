@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ToDo.Context;
 using ToDo.Models;
 
@@ -6,24 +7,30 @@ namespace ToDo.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public UserController(AppDbContext context)
+        public UsersController(AppDbContext context)
         {
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet()]
         public ActionResult<IEnumerable<User>> Get()
         {
-            var users = _context.Users.ToList();
+            var users = _context.Users.Select(u => new
+            {
+                u.Id,
+                u.Name,
+                u.Email,
+                Tasks = u.Tasks.Select(t => new { t.Id, t.Title, t.Description })
+            });
             if (users == null)
             {
                 return NotFound("Users not found.");
             }
-            return users;
+            return Ok(users);
         }
 
         [HttpGet("{id}", Name="GetNewUser")]
