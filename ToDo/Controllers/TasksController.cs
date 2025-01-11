@@ -20,33 +20,52 @@ namespace ToDo.Controllers
         [HttpGet("/Tasks")]
         public ActionResult<IEnumerable<TaskModel>> Get()
         {
-            var tasks = _context.Tasks.Select(t => new
+            try
             {
-                t.Id,
-                t.Title,
-                t.Description,
-                t.Status,
-                t.CreatedAt,
-                t.UpdatedAt,
-                t.UserId,
-                User = t.User.Name
-            }).ToList();
-            if (tasks == null)
-            {
-                return NotFound("Tasks not found.");
+                var tasks = _context.Tasks.Select(t => new
+                {
+                    t.Id,
+                    t.Title,
+                    t.Description,
+                    t.Status,
+                    t.CreatedAt,
+                    t.UpdatedAt,
+                    t.UserId,
+                    User = t.User.Name
+                }).AsNoTracking().ToList();
+                if (tasks == null)
+                {
+                    return NotFound("Tasks not found.");
+                }
+
+                return Ok(tasks);
             }
-            return Ok(tasks);
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
+            }
+            
+           
         }
 
         [HttpGet("{id}", Name = "GetNewTask")]
         public ActionResult<TaskModel> Get(int id)
         {
-            var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
-            if (task == null)
+            try
             {
-                return NotFound("Task not found.");
+                var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
+                if (task == null)
+                {
+                    return NotFound("Task not found.");
+                }
+                return task;
+
             }
-            return task;
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
+            }
         }
 
         [HttpPost]
