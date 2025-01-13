@@ -18,7 +18,7 @@ namespace ToDo.Migrations
             migrationBuilder.Sql("INSERT INTO Tasks(Title, Description, Status, CreatedAt, UpdatedAt, UserId) VALUES ('Fazer cardio na esteira', '15 minutos', 'C', NOW(), NOW(), 5)");
             migrationBuilder.Sql("INSERT INTO Tasks(Title, Description, Status, CreatedAt, UpdatedAt, UserId) VALUES ('Estudar Power BI', 'Teste da empresa', 'C', NOW(), NOW(), 6)");
             migrationBuilder.Sql("INSERT INTO Tasks(Title, Description, Status, CreatedAt, UpdatedAt, UserId) VALUES ('Jogar Fórmula 1', 'no xbox', 'D', NOW(), NOW(), 7)");
-           
+
         }
 
         /// <inheritdoc />

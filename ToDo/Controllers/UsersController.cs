@@ -5,7 +5,7 @@ using ToDo.Models;
 
 namespace ToDo.Controllers
 {
-    [Route("[controller]")]1
+    [Route("[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -17,7 +17,7 @@ namespace ToDo.Controllers
         }
 
         [HttpGet()]
-        public ActionResult<IEnumerable<User>> Get()
+        public async Task<ActionResult<IEnumerable<User>>> Get()
         {
             try
             {
@@ -26,8 +26,10 @@ namespace ToDo.Controllers
                     u.Id,
                     u.Name,
                     u.Email,
-                    Tasks = u.Tasks.Select(t => new { t.Id, t.Title, t.Description })
-                });
+                    Tasks = u.Tasks.Select(t => new
+                    { t.Id, t.Title, t.Description })
+                }).AsNoTracking()
+                .ToListAsync();
                 if (users == null)
                 {
                     return NotFound("Users not found.");
@@ -40,12 +42,12 @@ namespace ToDo.Controllers
             }
         }
 
-        [HttpGet("{id}", Name="GetNewUser")]
-        public ActionResult<User> Get(int id)
+        [HttpGet("{id}", Name = "GetNewUser")]
+        public async Task<ActionResult<User>> Get(int id)
         {
             try
             {
-                var user = _context.Users.FirstOrDefault(u => u.Id == id);
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
                 if (user == null)
                 {
                     return NotFound("User not found.");

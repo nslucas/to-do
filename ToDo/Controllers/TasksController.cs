@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc; // Keep this import
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using ToDo.Context;
 using TaskModel = ToDo.Models.Task;
-using Microsoft.EntityFrameworkCore;
 
 namespace ToDo.Controllers
 {
@@ -18,11 +17,11 @@ namespace ToDo.Controllers
         }
 
         [HttpGet()]
-        public ActionResult<IEnumerable<TaskModel>> Get()
+        public async Task<ActionResult<IEnumerable<TaskModel>>> Get()
         {
             try
             {
-                var tasks = _context.Tasks.Select(t => new
+                var tasks = await _context.Tasks.Select(t => new
                 {
                     t.Id,
                     t.Title,
@@ -32,7 +31,7 @@ namespace ToDo.Controllers
                     t.UpdatedAt,
                     t.UserId,
                     User = t.User.Name
-                }).AsNoTracking().ToList();
+                }).AsNoTracking().ToListAsync();
                 if (tasks == null)
                 {
                     return NotFound("Tasks not found.");
@@ -45,16 +44,16 @@ namespace ToDo.Controllers
 
                 return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
             }
-            
-           
+
+
         }
 
         [HttpGet("{id}", Name = "GetNewTask")]
-        public ActionResult<TaskModel> Get(int id)
+        public async Task<ActionResult<TaskModel>> Get(int id)
         {
             try
             {
-                var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
+                var task = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == id);
                 if (task == null)
                 {
                     return NotFound("Task not found.");

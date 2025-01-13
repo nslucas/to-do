@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using ToDo.Context;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 

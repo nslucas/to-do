@@ -8,7 +8,7 @@ namespace ToDo.Context
         public DbSet<Models.Task> Tasks { get; set; }
         public DbSet<Models.User> Users { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Tasks)

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Xml.Linq;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
