@@ -17,7 +17,7 @@ namespace ToDo.Controllers
             _context = context;
         }
 
-        [HttpGet("/Tasks")]
+        [HttpGet()]
         public ActionResult<IEnumerable<TaskModel>> Get()
         {
             try
@@ -71,39 +71,60 @@ namespace ToDo.Controllers
         [HttpPost]
         public ActionResult Post(TaskModel task)
         {
-            if (task == null)
+            try
             {
-                return BadRequest("Task is null.");
-            }
-            _context.Tasks.Add(task);
-            _context.SaveChanges();
+                if (task == null)
+                {
+                    return BadRequest("Task is null.");
+                }
+                _context.Tasks.Add(task);
+                _context.SaveChanges();
 
-            return new CreatedAtRouteResult("GetNewTask", new { id = task.Id }, task);
+                return new CreatedAtRouteResult("GetNewTask", new { id = task.Id }, task);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
+            }
         }
 
         [HttpPut("{id}")]
         public ActionResult Put(int id, TaskModel task)
         {
-            if (id != task.Id)
+            try
             {
-                return BadRequest();
+                if (id != task.Id)
+                {
+                    return BadRequest();
+                }
+                _context.Entry(task).State = EntityState.Modified;
+                _context.SaveChanges();
+                return Ok("Task updated successfully.");
             }
-            _context.Entry(task).State = EntityState.Modified;
-            _context.SaveChanges();
-            return Ok("Task updated successfully.");
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
+            }
         }
 
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
-            if (task == null)
+            try
             {
-                return NotFound("Task not specified.");
+                var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
+                if (task == null)
+                {
+                    return NotFound("Task not specified.");
+                }
+                _context.Tasks.Remove(task);
+                _context.SaveChanges();
+                return Ok("Task deleted successfully.");
             }
-            _context.Tasks.Remove(task);
-            _context.SaveChanges();
-            return Ok("Task deleted successfully.");
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
+            }
         }
     }
 }
