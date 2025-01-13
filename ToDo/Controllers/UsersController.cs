@@ -21,7 +21,7 @@ namespace ToDo.Controllers
         {
             try
             {
-                var users = _context.Users.Select(u => new
+                var users = await _context.Users.Select(u => new
                 {
                     u.Id,
                     u.Name,
