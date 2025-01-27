@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ToDo.Context;
+using ToDo.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ConfigureExceptionHandler();
 }
 
 app.UseHttpsRedirection();
