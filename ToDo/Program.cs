@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ToDo.Context;
 using ToDo.Extensions;
+using ToDo.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddControllers()
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
 //database connection
 string? Connection = builder.Configuration.GetConnectionString("DefaultConnection");

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc; // Keep this import
 using Microsoft.EntityFrameworkCore;
 using ToDo.Context;
+using ToDo.Repositories;
 using TaskModel = ToDo.Models.Task;
 
 namespace ToDo.Controllers
@@ -9,34 +10,19 @@ namespace ToDo.Controllers
     [Microsoft.AspNetCore.Mvc.Route("[controller]")]
     public class TasksController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly ITaskRepository _repository;
 
-        public TasksController(AppDbContext context)
+        public TasksController(ITaskRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         [HttpGet()]
-        public async Task<ActionResult<IEnumerable<TaskModel>>> Get()
+        public async Task<IActionResult> Get()
         {
             try
             {
-                var tasks = await _context.Tasks.Select(t => new
-                {
-                    t.Id,
-                    t.Title,
-                    t.Description,
-                    t.Status,
-                    t.CreatedAt,
-                    t.UpdatedAt,
-                    t.UserId,
-                    User = t.User.Name
-                }).AsNoTracking().ToListAsync();
-                if (tasks == null)
-                {
-                    return NotFound("Tasks not found.");
-                }
-
+                var tasks = await _repository.GetTasks();
                 return Ok(tasks);
             }
             catch (Exception)
@@ -53,12 +39,12 @@ namespace ToDo.Controllers
         {
             try
             {
-                var task = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == id);
+                var task = await _repository.GetTask(id);
                 if (task == null)
                 {
                     return NotFound("Task not found.");
                 }
-                return task;
+                return Ok(task);
 
             }
             catch (Exception)
@@ -68,7 +54,7 @@ namespace ToDo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(TaskModel task)
+        public async Task<ActionResult> Post(TaskModel task)
         {
             try
             {
@@ -76,10 +62,11 @@ namespace ToDo.Controllers
                 {
                     return BadRequest("Task is null.");
                 }
-                _context.Tasks.Add(task);
-                _context.SaveChanges();
 
-                return new CreatedAtRouteResult("GetNewTask", new { id = task.Id }, task);
+
+                var taskCreated = await _repository.CreateTask(task);
+
+                return new CreatedAtRouteResult("GetNewTask", new { id = taskCreated.Id }, taskCreated);
             }
             catch (Exception)
             {
@@ -88,17 +75,20 @@ namespace ToDo.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, TaskModel task)
+        public async Task<ActionResult> Put(int id, [FromBody] TaskModel task)
         {
             try
             {
+                // Log para depuração
+                Console.WriteLine($"ID recebido: {task.Id}");
+                Console.WriteLine($"ID da rota: {id}");
+
                 if (id != task.Id)
                 {
                     return BadRequest();
                 }
-                _context.Entry(task).State = EntityState.Modified;
-                _context.SaveChanges();
-                return Ok("Task updated successfully.");
+               var updatedTask = await _repository.UpdateTask(id, task);
+                return Ok(updatedTask);
             }
             catch (Exception)
             {
@@ -107,18 +97,18 @@ namespace ToDo.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             try
             {
-                var task = _context.Tasks.FirstOrDefault(t => t.Id == id);
+                var task = await _repository.GetTask(id);
                 if (task == null)
                 {
                     return NotFound("Task not specified.");
                 }
-                _context.Tasks.Remove(task);
-                _context.SaveChanges();
-                return Ok("Task deleted successfully.");
+
+                var taskDeleted = await _repository.DeleteTask(id);
+                return Ok(taskDeleted);
             }
             catch (Exception)
             {
