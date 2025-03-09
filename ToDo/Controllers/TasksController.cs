@@ -115,5 +115,21 @@ namespace ToDo.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
             }
         }
+
+        [HttpGet("SomarTasksCompletas")]
+        public async Task<IActionResult> CountTasksCompletedByUser(int id)
+        {
+            try
+            {
+                var userName = await _repository.GetUserNameById(id);
+                var countTasksCompleted = await _repository.CountTasksCompletedByUser(id);
+                var message = $"O usuário {userName} completou: {countTasksCompleted} tarefas";
+                return Ok(message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
+            }
+        }
     }
 }

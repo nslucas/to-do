@@ -9,6 +9,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\repositories\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\repositories\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|c:\\users\\lucas\\documentos\\dev\\todo\\todo\\todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DC64CF-B941-48DA-A35F-93A583A314AA}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +26,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "ToDo\\Models\\Task.cs",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Models\\Task.cs",
+              "RelativeToolTip": "ToDo\\Models\\Task.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T00:33:01.986Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Repositories\\ITaskRepository.cs",
+              "RelativeDocumentMoniker": "ToDo\\Repositories\\ITaskRepository.cs",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Repositories\\ITaskRepository.cs",
+              "RelativeToolTip": "ToDo\\Repositories\\ITaskRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T15:58:59.906Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,7 +64,7 @@
               "RelativeDocumentMoniker": "ToDo\\Repositories\\TaskRepository.cs",
               "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Repositories\\TaskRepository.cs",
               "RelativeToolTip": "ToDo\\Repositories\\TaskRepository.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAQwDwAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAhwEcAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-06T23:57:55.529Z",
               "EditorCaption": ""
@@ -39,9 +75,9 @@
               "Title": "TasksController.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Controllers\\TasksController.cs",
               "RelativeDocumentMoniker": "ToDo\\Controllers\\TasksController.cs",
-              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Controllers\\TasksController.cs*",
-              "RelativeToolTip": "ToDo\\Controllers\\TasksController.cs*",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAmwGMAAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lucas\\Documentos\\DEV\\ToDo\\ToDo\\ToDo\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "ToDo\\Controllers\\TasksController.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAApwH0AAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T00:52:08.29Z",
               "EditorCaption": ""

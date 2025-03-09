@@ -90,6 +90,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ToDo.Controllers.TasksController",
+    "Method": "CountTasksCompletedByUser",
+    "RelativePath": "Tasks/SomarTasksCompletas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ToDo.Controllers.UsersController",
     "Method": "Get",
     "RelativePath": "Users",

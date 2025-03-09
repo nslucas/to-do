@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ToDo.Context;
+using ToDo.Models;
 using TaskModel = ToDo.Models.Task;
 
 
@@ -63,7 +64,16 @@ namespace ToDo.Repositories
 
         }
 
+        public async Task<int> CountTasksCompletedByUser(int id)
+        {
+            return await _context.Set<TaskModel>().Where(t => t.UserId == id && t.Status == 'C').CountAsync();
+        }
 
+        public async Task<string> GetUserNameById(int id)
+        {
+            var user = await _context.Set<User>().FirstOrDefaultAsync(u => u.Id == id);
+            return user?.Name ?? "Usuário não encontrado";
+        }
     }
 
 }
