@@ -72,8 +72,8 @@ namespace ToDo.Repositories
 
         public async Task<int> CountTasksCompletedByUserCurrentMonth(int id)
         {
-            DateTime currentMonth = DateTime.Now;
-            return await _context.Set<TaskModel>().Where(t => t.UserId == id && t.Status == 'C' && t.CreatedAt.Month == currentMonth.Month).CountAsync();
+            DateTime currentDate = DateTime.UtcNow;
+            return await _context.Set<TaskModel>().Where(t => t.UserId == id && t.Status == 'C' && t.CreatedAt.Month == currentDate.Month).CountAsync();
         }
 
         public async Task<string> GetUserNameById(int id)
