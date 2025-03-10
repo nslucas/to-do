@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ToDo.Context;
 using ToDo.Models;
+using ToDo.Repositories;
 
 namespace ToDo.Controllers
 {
@@ -9,11 +10,11 @@ namespace ToDo.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IUserRepository _repository;
 
-        public UsersController(AppDbContext context)
+        public UsersController(IUserRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         [HttpGet()]
@@ -21,19 +22,8 @@ namespace ToDo.Controllers
         {
             try
             {
-                var users = await _context.Users.Select(u => new
-                {
-                    u.Id,
-                    u.Name,
-                    u.Email,
-                    Tasks = u.Tasks.Select(t => new
-                    { t.Id, t.Title, t.Description })
-                }).AsNoTracking()
-                .ToListAsync();
-                if (users == null)
-                {
-                    return NotFound("Users not found.");
-                }
+                var users = await _repository.GetUsers();
+
                 return Ok(users);
             }
             catch (Exception)
@@ -47,7 +37,8 @@ namespace ToDo.Controllers
         {
             try
             {
-                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+                var user = await _repository.GetUser(id);
+
                 if (user == null)
                 {
                     return NotFound("User not found.");
@@ -61,7 +52,7 @@ namespace ToDo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(User user)
+        public async Task<ActionResult> Post(User user)
         {
             try
             {
@@ -69,8 +60,8 @@ namespace ToDo.Controllers
                 {
                     return BadRequest("User is null.");
                 }
-                _context.Users.Add(user);
-                _context.SaveChanges();
+                
+                var userCreated = await _repository.CreateUser(user);
                 return new CreatedAtRouteResult("GetNewUser", new { id = user.Id }, user);
             }
             catch (Exception)
@@ -80,17 +71,16 @@ namespace ToDo.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, User user)
+        public async Task<ActionResult> Put(int id, User user)
         {
             try
             {
                 if (id != user.Id)
                 {
-                    return BadRequest();
+                    return BadRequest("User ID mismatch.");
                 }
-                _context.Users.Update(user);
-                _context.SaveChanges();
-                return Ok("User updated successfully.");
+                var userUpdated = await _repository.UpdateUser(id, user);
+                return Ok(userUpdated);
             }
             catch (Exception)
             {
@@ -99,19 +89,20 @@ namespace ToDo.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             try
             {
-                var user = _context.Users.FirstOrDefault(u => u.Id == id);
-                if (user == null)
+                var userExist = await _repository.GetUser(id);
+                if (userExist == null)
                 {
-                    return NotFound("User not specified.");
+                    return NotFound("User not found.");
                 }
-                _context.Users.Remove(user);
-                _context.SaveChanges();
-                return Ok("User deleted successfully.");
+
+                var user = await _repository.DeleteUser(id);
+                return Ok(user);
             }
+            
             catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");

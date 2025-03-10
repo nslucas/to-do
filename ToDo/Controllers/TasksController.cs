@@ -63,7 +63,6 @@ namespace ToDo.Controllers
                     return BadRequest("Task is null.");
                 }
 
-
                 var taskCreated = await _repository.CreateTask(task);
 
                 return new CreatedAtRouteResult("GetNewTask", new { id = taskCreated.Id }, taskCreated);
@@ -79,10 +78,6 @@ namespace ToDo.Controllers
         {
             try
             {
-                // Log para depuração
-                Console.WriteLine($"ID recebido: {task.Id}");
-                Console.WriteLine($"ID da rota: {id}");
-
                 if (id != task.Id)
                 {
                     return BadRequest();
