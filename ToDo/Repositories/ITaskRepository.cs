@@ -8,5 +8,6 @@ public interface ITaskRepository
     Task<TaskModel> UpdateTask(int id, Models.Task task);
     Task<TaskModel> DeleteTask(int id);
     Task<int> CountTasksCompletedByUser(int id);
+    Task<int> CountTasksCompletedByUserCurrentMonth(int id);
     Task<string> GetUserNameById(int id);
 }

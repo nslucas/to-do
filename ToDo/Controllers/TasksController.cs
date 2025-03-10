@@ -116,7 +116,7 @@ namespace ToDo.Controllers
             }
         }
 
-        [HttpGet("SomarTasksCompletas")]
+        [HttpGet("SumCompletedTasks")]
         public async Task<IActionResult> CountTasksCompletedByUser(int id)
         {
             try
@@ -124,6 +124,22 @@ namespace ToDo.Controllers
                 var userName = await _repository.GetUserNameById(id);
                 var countTasksCompleted = await _repository.CountTasksCompletedByUser(id);
                 var message = $"O usuário {userName} completou: {countTasksCompleted} tarefas";
+                return Ok(message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem while processing your request. Please contact our support");
+            }
+        }
+
+        [HttpGet("SumCompletedTasksByUserInTheCurrentMonth")]
+        public async Task<IActionResult> CountTasksCompletedByUserCurrentMonth(int id)
+        {
+            try
+            {
+                var userName = await _repository.GetUserNameById(id);
+                var countTasksCompletedInTheCurrentMonth = await _repository.CountTasksCompletedByUserCurrentMonth(id);
+                var message = $"O usuário {userName} completou: {countTasksCompletedInTheCurrentMonth} tarefas neste mês";
                 return Ok(message);
             }
             catch (Exception)

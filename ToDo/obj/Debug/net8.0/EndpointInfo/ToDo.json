@@ -158,7 +158,29 @@
         }
       }
     },
-    "/Tasks/SomarTasksCompletas": {
+    "/Tasks/SumCompletedTasks": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Tasks/SumCompletedTasksByUserInTheCurrentMonth": {
       "get": {
         "tags": [
           "Tasks"
