@@ -15,6 +15,16 @@ namespace ToDo.Context
                 .WithOne(t => t.User)
                 .HasForeignKey(t => t.UserId);
 
+            modelBuilder.Entity<Models.Task>()
+                .HasOne(t => t.User)
+                .WithMany(u => u.Tasks)
+                .HasForeignKey(t => t.UserId);
+
+            modelBuilder.Entity<Models.Task>()
+                .Property(t => t.Status)
+                .HasConversion<string>();
+
+
             base.OnModelCreating(modelBuilder);
         }
     }

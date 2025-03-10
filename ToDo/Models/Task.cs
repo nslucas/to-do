@@ -13,7 +13,8 @@ namespace ToDo.Models
         [StringLength(300)]
         public string? Description { get; set; }
         [Required]
-        public char Status { get; set; }
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public StatusTask Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public int UserId { get; set; }

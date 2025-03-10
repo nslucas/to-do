@@ -384,6 +384,14 @@
   },
   "components": {
     "schemas": {
+      "StatusTask": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "Task": {
         "required": [
           "status",
@@ -403,7 +411,7 @@
             "nullable": true
           },
           "status": {
-            "type": "string"
+            "$ref": "#/components/schemas/StatusTask"
           },
           "createdAt": {
             "type": "string",

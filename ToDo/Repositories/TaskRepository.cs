@@ -66,14 +66,14 @@ namespace ToDo.Repositories
 
         public async Task<int> CountTasksCompletedByUser(int id)
         {
-            return await _context.Set<TaskModel>().Where(t => t.UserId == id && t.Status == 'C').CountAsync();
+            return await _context.Set<TaskModel>().Where(t => t.UserId == id && t.Status == StatusTask.Completed).CountAsync();
         }
 
 
         public async Task<int> CountTasksCompletedByUserCurrentMonth(int id)
         {
             DateTime currentDate = DateTime.UtcNow;
-            return await _context.Set<TaskModel>().Where(t => t.UserId == id && t.Status == 'C' && t.CreatedAt.Month == currentDate.Month).CountAsync();
+            return await _context.Set<TaskModel>().Where(t => t.UserId == id && t.Status == StatusTask.Completed && t.CreatedAt.Month == currentDate.Month).CountAsync();
         }
 
         public async Task<string> GetUserNameById(int id)

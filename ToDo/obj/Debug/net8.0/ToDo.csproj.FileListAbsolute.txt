@@ -136,8 +136,8 @@ C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\obj\Debug\net8.0\refint\ToDo.dll
 C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\obj\Debug\net8.0\ToDo.pdb
 C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\obj\Debug\net8.0\ToDo.genruntimeconfig.cache
 C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\obj\Debug\net8.0\ref\ToDo.dll
-C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\lucas\Documentos\DEV\ToDo\ToDo\ToDo\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
