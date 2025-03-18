@@ -12,12 +12,7 @@ namespace ToDo.Context
         {
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Tasks)
-                .WithOne(t => t.User)
-                .HasForeignKey(t => t.UserId);
-
-            modelBuilder.Entity<Models.Task>()
-                .HasOne(t => t.User)
-                .WithMany(u => u.Tasks)
+                .WithOne()
                 .HasForeignKey(t => t.UserId);
 
             modelBuilder.Entity<Models.Task>()

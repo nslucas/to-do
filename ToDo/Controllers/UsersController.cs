@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ToDo.DTO;
 using ToDo.Models;
 using ToDo.Repositories;
 
@@ -11,20 +13,23 @@ namespace ToDo.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _repository;
-
-        public UsersController(IUserRepository repository)
+        private readonly IMapper _mapper;
+        public UsersController(IUserRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         [HttpGet()]
-        public async Task<ActionResult<IEnumerable<User>>> Get()
+        public async Task<ActionResult<IEnumerable<UserDTO>>> Get()
         {
             try
             {
                 var users = await _repository.GetUsers();
 
-                return Ok(users);
+                var usersDto = _mapper.Map<IEnumerable<UserDTO>>(users);
+
+                return Ok(usersDto);
             }
             catch (Exception)
             {
@@ -33,7 +38,7 @@ namespace ToDo.Controllers
         }
 
         [HttpGet("{id}", Name = "GetNewUser")]
-        public async Task<ActionResult<User>> Get(int id)
+        public async Task<ActionResult<UserDTO>> Get(int id)
         {
             try
             {
@@ -42,8 +47,11 @@ namespace ToDo.Controllers
                 if (user == null)
                 {
                     return NotFound("User not found.");
+
                 }
-                return user;
+
+                var userDto = _mapper.Map<UserDTO>(user); 
+                return userDto;
             }
             catch (Exception)
             {
@@ -52,17 +60,19 @@ namespace ToDo.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(User user)
+        public async Task<ActionResult<UserCreateDTO>> Post(UserCreateDTO userCreateDTO)
         {
             try
             {
-                if (user == null)
+                if (userCreateDTO == null)
                 {
                     return BadRequest("User is null.");
                 }
-                
+
+                var user = _mapper.Map<User>(userCreateDTO);
                 var userCreated = await _repository.CreateUser(user);
-                return new CreatedAtRouteResult("GetNewUser", new { id = user.Id }, user);
+                var userCreatedDto = _mapper.Map<UserCreateDTO>(userCreated);
+                return new CreatedAtRouteResult("GetNewUser", userCreatedDto);
             }
             catch (Exception)
             {
@@ -71,16 +81,21 @@ namespace ToDo.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, User user)
+        public async Task<ActionResult<UserDTO>> Put(int id, UserDTO userDto)
         {
             try
             {
-                if (id != user.Id)
+                var user = await _repository.GetUser(id);
+
+                if (user == null)
                 {
-                    return BadRequest("User ID mismatch.");
+                    return BadRequest("User not found.");
                 }
-                var userUpdated = await _repository.UpdateUser(id, user);
-                return Ok(userUpdated);
+                // Aplique as alterações do userDto ao user
+                var userUpdate = _mapper.Map(userDto, user);
+                var userUpdated = await _repository.UpdateUser(id, userUpdate);
+                var updatedUserDto = _mapper.Map<UserDTO>(userUpdated);
+                return Ok(updatedUserDto);
             }
             catch (Exception)
             {
@@ -89,7 +104,7 @@ namespace ToDo.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<ActionResult<UserDTO>> Delete(int id)
         {
             try
             {
@@ -100,7 +115,8 @@ namespace ToDo.Controllers
                 }
 
                 var user = await _repository.DeleteUser(id);
-                return Ok(user);
+                var userDeletedDto = _mapper.Map<UserDTO>(user);
+                return Ok(userDeletedDto);
             }
             
             catch (Exception)

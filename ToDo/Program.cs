@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Converters;
 using ToDo.Context;
+using ToDo.DTO.Mappings;
 using ToDo.Extensions;
 using ToDo.Repositories;
 
@@ -31,6 +32,12 @@ if (string.IsNullOrEmpty(Connection))
 
 string mySqlConnection = Connection;
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
+builder.Services.AddAutoMapper(typeof(TaskDTOMappingProfile));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("tasksApp", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+});
 
 // Configure the HTTP request pipeline.
 var app = builder.Build();
@@ -41,6 +48,7 @@ if (app.Environment.IsDevelopment())
     app.ConfigureExceptionHandler();
 }
 
+app.UseCors("tasksApp");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

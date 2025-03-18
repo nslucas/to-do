@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using ToDo.Models;
 
-namespace ToDo.Models
+namespace ToDo.DTO
 {
-    public class Task
+    public class TaskDTO
     {
-        [JsonIgnore]
-        public int Id { get; set; }
         [Required]
         [StringLength(80)]
         public required string Title { get; set; }
@@ -18,7 +17,5 @@ namespace ToDo.Models
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public int UserId { get; set; }
-        //[JsonIgnore]
-        //public User? User { get; set; }
     }
 }

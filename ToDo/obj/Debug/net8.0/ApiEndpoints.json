@@ -7,7 +7,17 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ToDo.DTO.TaskDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ToDo.Controllers.TasksController",
@@ -18,12 +28,22 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "task",
-        "Type": "ToDo.Models.Task",
+        "Name": "taskDto",
+        "Type": "ToDo.DTO.TaskDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ToDo.DTO.TaskDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ToDo.Controllers.TasksController",
@@ -41,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ToDo.Models.Task",
+        "Type": "ToDo.DTO.TaskDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -66,12 +86,22 @@
         "IsRequired": true
       },
       {
-        "Name": "task",
-        "Type": "ToDo.Models.Task",
+        "Name": "taskDto",
+        "Type": "ToDo.DTO.TaskDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ToDo.DTO.TaskDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ToDo.Controllers.TasksController",
@@ -87,7 +117,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ToDo.DTO.TaskDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ToDo.Controllers.TasksController",
@@ -131,7 +171,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ToDo.Models.User, ToDo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ToDo.DTO.UserDTO, ToDo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -150,12 +190,22 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "ToDo.Models.User",
+        "Name": "userCreateDTO",
+        "Type": "ToDo.DTO.UserCreateDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ToDo.DTO.UserCreateDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ToDo.Controllers.UsersController",
@@ -173,7 +223,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ToDo.Models.User",
+        "Type": "ToDo.DTO.UserDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -198,12 +248,22 @@
         "IsRequired": true
       },
       {
-        "Name": "user",
-        "Type": "ToDo.Models.User",
+        "Name": "userDto",
+        "Type": "ToDo.DTO.UserDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ToDo.DTO.UserDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ToDo.Controllers.UsersController",
@@ -219,6 +279,16 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "ToDo.DTO.UserDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
